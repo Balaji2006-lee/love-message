@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I Love You</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #fff0f5;
+    }
+    .heart {
+      color: red;
+      font-size: 2em;
+    }
+    #message {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #ff1493;
+    }
+    a {
+      display: inline-block;
+      margin-top: 40px;
+      font-size: 1.2em;
+      text-decoration: none;
+      color: blue;
+      border: 2px solid blue;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+    a:hover {
+      background-color: blue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>I <span class="heart">❤️</span> you</h1>
+
+  <div id="message">I am sorryyy 😔</div>
+
+  <a href="#" onclick="document.getElementById('message').style.display='block'">Click here to see the message</a>
+
+</body>
+</html>
