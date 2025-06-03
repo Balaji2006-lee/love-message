@@ -5,34 +5,72 @@
   <title>I Love You</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
       text-align: center;
-      margin-top: 100px;
-      background-color: #fff0f5;
+      margin-top: 50px;
+      background-color: #ffe6f0;
+      overflow-x: hidden;
     }
+
     .heart {
       color: red;
       font-size: 2em;
+      animation: beat 1s infinite;
     }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
     #message {
       display: none;
       margin-top: 20px;
-      font-size: 1.5em;
-      color: #ff1493;
+      font-size: 1.8em;
+      color: #d63384;
+      animation: fadeIn 2s ease-in-out forwards;
     }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
     a {
       display: inline-block;
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 1.2em;
       text-decoration: none;
-      color: blue;
-      border: 2px solid blue;
-      padding: 10px 20px;
-      border-radius: 8px;
-    }
-    a:hover {
-      background-color: blue;
       color: white;
+      background-color: #ff69b4;
+      padding: 10px 20px;
+      border-radius: 12px;
+      transition: background 0.3s;
+    }
+
+    a:hover {
+      background-color: #d63384;
+    }
+
+    .characters {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .characters img {
+      width: 180px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .characters img:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -42,7 +80,18 @@
 
   <div id="message">I am sorryyy 😔</div>
 
-  <a href="#" onclick="document.getElementById('message').style.display='block'">Click here to see the message</a>
+  <a href="#" onclick="showMessage()">Click here to see the message</a>
+
+  <div class="characters">
+    <img src="https://upload.wikimedia.org/wikipedia/en/0/02/Doraemon_character.png" alt="Doraemon">
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/57/Hello_Kitty_character_portrait.png" alt="Hello Kitty">
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>
